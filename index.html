@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register Form</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="container" id="registerForm">
+      <h2>Register</h2>
+      <form id="registrationForm" onsubmit="registerUser(); return false;">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" />
+        <div class="error-message" id="fullNameError"></div>
+
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" />
+        <div class="error-message" id="emailError"></div>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" id="mobile" name="mobile" />
+        <div class="error-message" id="mobileError"></div>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" />
+        <div class="error-message" id="usernameError"></div>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" />
+        <div class="error-message" id="passwordError"></div>
+
+        <button type="submit">Register</button>
+      </form>
+
+      <div id="otpSection" style="display: none">
+        <label for="otp">Enter OTP:</label>
+        <input type="text" id="otp" name="otp" />
+        <button onclick="validateOTP()">Submit OTP</button>
+        <div class="error-message" id="otpError"></div>
+      </div>
+
+      <div id="message" style="color: green"></div>
+
+      <div id="recaptcha-container"></div>
+      <button id="showTableButton" onclick="redirectToUserTable()">
+        Show Registered Users
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
